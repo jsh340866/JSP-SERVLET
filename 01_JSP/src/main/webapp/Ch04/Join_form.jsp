@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,7 +108,7 @@
             - DELETE     : 
     -->
 
-    <form action="./C02Join.jsp" method="post">
+    <form action="${pageContext.request.contextPath}/Ch04/auth/Join.jsp" method="post">
         <div class="">
             <h2>회원가입</h2>
         </div>
@@ -143,11 +145,11 @@
         <div class="row">
             <label>휴대전화</label>
             <select name="ph01">
-                <option value="010" selected>010</option>
+                <option  value="010" selected>010</option>
                 <option value="011">011</option>
             </select>
-            <input name="ph02" type="text" />
-            <input name="ph03" type="text" />
+            <input  name="ph02" type="text"   />
+            <input  name="ph03" type="text" />
         </div>
         <div class="row">
             <label>연락처</label>
@@ -178,7 +180,7 @@
             <select name="birthYear">
                 <option value="2025" selected>2025</option>
                 <option value="2024">2024</option>
-                <option value="2023">2023</option>
+                <option value=2023>2023</option>
             </select>
             <select name="birthMonth">
                 <option value="12" selected>12</option>

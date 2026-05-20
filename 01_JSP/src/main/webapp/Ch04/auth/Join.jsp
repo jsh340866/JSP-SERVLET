@@ -36,28 +36,9 @@
 <!-- 04 결과확인 - 리다이렉트(./03Login.jsp) -->
 <%
 	//request.getContextPath() = 현재 프로젝트 경로
-	response.sendRedirect(request.getContextPath() + "/Ch04/login.jsp");
+	response.sendRedirect(request.getContextPath() + "/Ch04/login_form.jsp");
 
 	//프로젝트 경로(/01_JSP)
 	//System.out.println("PATH : " + request.getContextPath());
 %>
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
-	<h1>C05 Process File</h1>
-	<hr/>
-	DTO : <%=dto %>
-	<hr/>
-
-
-
-
-
-</body>
-</html>
