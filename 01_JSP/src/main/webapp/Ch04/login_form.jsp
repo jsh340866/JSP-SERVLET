@@ -121,11 +121,21 @@
             <input name="password" type="password" />
         </div>
         <div class="row">
-            <input class="btn btn-submit"  type="submit" value="회원가입" />
+            <input class="btn btn-submit"  type="submit" value="로그인" />
         </div>
+		<hr/>
+		
+		<span style="font-size:.7rem;color:red;"> 
+			${message}
+		</span>
 
     </form>
-
+	
+	<%
+		session.removeAttribute("isAuth");
+		session.removeAttribute("message");
+	%>
+	
 
 </body>
 

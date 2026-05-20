@@ -7,8 +7,6 @@ public class AuthDTO {
 	private String userid;
 	private String password;
 	
-	
-	
 	public AuthDTO() {
 		super();
 	}

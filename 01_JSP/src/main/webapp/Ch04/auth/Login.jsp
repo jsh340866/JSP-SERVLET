@@ -12,13 +12,8 @@
 - jsp:useBean 이용해서 Bean 생성
 - jsp:setProperty 로 입력 파라미터 Bean 주입
 -->
-<jsp:useBean id="Bean" class="Ch04.AuthDTO" scope="request"/>
-<jsp:setProperty name="Bean" property="*" />
-
-<%
-	System.out.println("Bean : " + Bean);
-%>
-
+<jsp:useBean id="authDTO" class="Ch04.AuthDTO" scope="request" />
+<jsp:setProperty name="authDTO" property="*" />
 
 <!-- 
 02 유효성 검증 
@@ -30,26 +25,28 @@
 - 일치하면 03 서비스 실행 진행
 - 불일치하면 Redirect진행 /01_JSP/Ch04/login_form.jsp
 -->
+<jsp:useBean id="dao" class="Ch04.UserDAO" scope="request" />
+<%@ page import = "Ch04.UserDTO" %>
 <%
-
-String userid = request.getParameter("userid");
-String password = request.getParameter("password");
-
-System.out.println(userid + " : "  +  password);
-
-if(!Bean.getUserid().equals(userid)) {
-	System.out.println("아이디가 잘못되었습니다.");
-	response.sendRedirect(request.getContextPath()+"/Ch04/login_form.jsp");
+UserDTO userDTO = dao.select(authDTO.getUserid());
+if(userDTO==null){
+	response.sendRedirect(request.getContextPath() + "/Ch04/login_form.jsp");
+	session.setAttribute("isAuth",false);
+	session.setAttribute("message","❌ 동일한 ID가 없습니다");
+	System.out.println("아이디가 틀렸습니다.");
+	return ;
 }
-else if(!Bean.getPassword().equals(password)) {
-	System.out.println("비밀번호가 잘못되었습니다.");
-	response.sendRedirect(request.getContextPath()+"/Ch04/login_form.jsp");
+if(!authDTO.getPassword().equals(userDTO.getPassword())){
+	response.sendRedirect(request.getContextPath() + "/Ch04/login_form.jsp");
+	session.setAttribute("isAuth",false);
+	session.setAttribute("message","❌ PW가 일치하지 않습니다");
+	System.out.println("비밀번호가 틀렸습니다.");
+	return ;
 }
+
+%>
 
 // Redirect
-// 
-//
-
 %>
 
 <!-- 03 서비스 실행(생략) -->
@@ -61,7 +58,9 @@ else if(!Bean.getPassword().equals(password)) {
 04 뷰로 이동 
 -->
 <%
-	response.sendRedirect(request.getContextPath() +"/Ch04/main.jsp");
+response.sendRedirect(request.getContextPath() + "/Ch04/main.jsp");
+session.setAttribute("isAuth",true);
+session.setAttribute("message","로그인 완료!");
 %>
 
 

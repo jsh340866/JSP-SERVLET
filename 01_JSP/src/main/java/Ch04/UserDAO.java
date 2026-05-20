@@ -12,8 +12,8 @@ public class UserDAO {
 	private static final String SQL_INSERT = "INSERT INTO tbl_user VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 	private static final String SQL_SELECT_ALL = "SELECT * " + "FROM tbl_user ORDER BY userid ASC";
-
-	private static final String SQL_SELECT = "SELECT * " + "FROM tbl_user WHERE userid = ?";
+	
+	private static final String SQL_SELECT = "SELECT * " + "FROM tbl_user where userid = ?";
 
 	private static final String SQL_UPDATE = "UPDATE tbl_user SET password=?, rePassword=?, username=?, zipcode=?, addr1=?, addr2=?, ph01=?, ph02=?, ph03=?, tel01=?, tel02=?, tel03=?, email01=?, email02=?, birthType=?, birthYear=?, birthMonth=?, birthDay=?, email_recv=?, sms_recv=? WHERE userid=? ";
 
@@ -59,11 +59,23 @@ public class UserDAO {
 
 	// TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	public UserDTO select(String userid) throws SQLException {
+		UserDTO dto = null;
 		try (Connection conn = DBManager.getConnection();
-				PreparedStatement pstmt = conn.prepareStatement(SQL_SELECT);) {
+				PreparedStatement pstmt = conn.prepareStatement(SQL_SELECT);
+				) {
+				
+			
 			pstmt.setString(1, userid);
-			return (UserDTO) pstmt.executeQuery();
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				dto = new UserDTO();
+				dto.setUserid(rs.getString("userid"));
+				dto.setPassword(rs.getString("password"));
 			}
+			return dto;	// null or UserDTO
+		}	finally {
+			
+		}
 	}
 
 	/**
