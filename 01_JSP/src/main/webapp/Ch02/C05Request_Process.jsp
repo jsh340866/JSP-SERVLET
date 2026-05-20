@@ -18,7 +18,7 @@
     
     
 <jsp:useBean id="dto" class="Ch02.C05UserDto" scope="request"/>
-<jsp:setProperty property="*" name="dto"/>
+<jsp:setProperty name="dto" property="*" />
 
 <%
 	System.out.println("DTO : " + dto);
