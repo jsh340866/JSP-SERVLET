@@ -30,10 +30,9 @@
 	PASSWORD : <%=password%><br /> 
 	--%>
 	
-	USERNAME : ${param.username} <br />	 
-	PASSWORD : ${param.password} <br /> 
-	02PAGE_ATTR : ${C02} <br/>
-	03PAGE_ATTR : ${C03} <br/>
+	USERNAME : ${username} <br />	 
+	PASSWORD : ${password} <br /> 
+	
 	
 
 </body>

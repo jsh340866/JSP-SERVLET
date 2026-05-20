@@ -7,11 +7,15 @@
 	
 	System.out.println("현재위치 : 03.jsp");
 	
-	/* Object ob = request.getAttribute("C02");
-	System.out.println("C02 : " + ob);*/
-	request.setAttribute("C03", "03_Value");
-	// Forward처리 04.jsp 
-	request.getRequestDispatcher("./04.jsp").forward(request,response);
+	// 세션SCOPE에 보관
+	session.setAttribute("username", username);
+	session.setAttribute("password", password);
+
+	
+	// Redirect
+	response.sendRedirect("./04.jsp");
+	
+	
 %>
 <!DOCTYPE html>
 <html>

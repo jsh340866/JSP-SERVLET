@@ -10,7 +10,10 @@
 	
 	// Redirect
 	// 
-
+	response.sendRedirect("./03.jsp?username="+username+"&password="+password);
+	
+	
+	
 %>
 <!DOCTYPE html>
 <html>
