@@ -121,7 +121,15 @@
             <label>비밀번호</label>
             <input name="password" type="password" />
         </div>
- 
+ 	        <div class="row">
+            <input id="email-recv" name="id_saved" type="checkbox" /> 
+            <label for="email-recv">ID 저장</label>
+        </div>
+        <div class="row">
+            <input id="sms-recv" name="pw_saved" type="checkbox" /> 
+            <label for="sms-recv">PW 저장</label>
+        </div>
+        
         <div class="row">
             <input class="btn btn-submit"  type="submit" value="로그인" />
         </div>
