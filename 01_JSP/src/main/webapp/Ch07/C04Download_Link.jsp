@@ -8,7 +8,9 @@
 </head>
 <body>
 
-	<a href="./C04Download_SingleFile.jsp">file1 다운로드</a>
+	<a href="./C04Download_SingleFile.jsp">[단일파일] file1 다운로드</a>
+	
+	<a href="./C04Download_SingleFile.jsp">[묶음파일] ZIP 다운로드</a>
 
 </body>
 </html>
