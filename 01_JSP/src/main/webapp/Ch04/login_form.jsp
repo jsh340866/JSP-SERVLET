@@ -14,14 +14,15 @@
             margin:0;
             padding:0;
         }
+        
         input{
             height:100%;
             outline:none;
             border-radius: 0;
             border : 1px solid gray;
-            padding-left:10px;
-           
+            padding-left:10px;    
         }
+        
         input[type="text"],
         input[type="password"]
         {
@@ -120,23 +121,28 @@
             <label>비밀번호</label>
             <input name="password" type="password" />
         </div>
+ 
         <div class="row">
             <input class="btn btn-submit"  type="submit" value="로그인" />
         </div>
-		<hr/>
-		
-		<span style="font-size:.7rem;color:red;"> 
-			${message}
-		</span>
-
+        
+        <hr/>
+        	
+	    <span style="font-size:.7rem;color:red;">
+	    	 ${message}
+	    </span>
+	    
     </form>
-	
+    
+
 	<%
 		session.removeAttribute("isAuth");
 		session.removeAttribute("message");
 	%>
 	
-
 </body>
 
 </html>
+
+
+
