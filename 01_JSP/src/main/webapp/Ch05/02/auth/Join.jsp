@@ -35,7 +35,7 @@
 
 <!-- 04 결과확인 - 리다이렉트(./03Login.jsp) -->
 <%
-	response.sendRedirect(request.getContextPath() + "/Ch04/login_form.jsp");
+	response.sendRedirect(request.getContextPath() + "/Ch05/02/login_form.jsp");
 
 
 	

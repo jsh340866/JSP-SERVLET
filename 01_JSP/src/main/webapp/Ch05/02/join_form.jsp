@@ -108,7 +108,7 @@
             - DELETE     : 
     -->
 
-    <form action="${pageContext.request.contextPath}/Ch04/auth/Join.jsp" method="post">
+    <form action="${pageContext.request.contextPath}/Ch05/02/auth/Join.jsp" method="post">
         <div class="">
             <h2>회원가입</h2>
         </div>

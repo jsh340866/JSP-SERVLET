@@ -109,7 +109,7 @@
             - DELETE     : 
     -->
 
-    <form action="${pageContext.request.contextPath}/Ch04/auth/Login.jsp" method="post">
+    <form action="${pageContext.request.contextPath}/Ch05/02/auth/Login.jsp" method="post">
         <div class="">
             <h2>로그인</h2>
         </div>
