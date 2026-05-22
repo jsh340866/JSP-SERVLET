@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!--
-
 	[EX04] 액션태그로 DTO 자동매핑
 	선결작업:
 		Ch02_EX/BookDto.java 를 src/main/java/Ch02_EX 패키지에 생성
