@@ -143,8 +143,9 @@
 	    	 ${userid} &nbsp;&nbsp;
 	    	 ${password}
 	    </span>
-	    
+		<span style="font-size:.7rem;">${message}</span>    
     </form>
+    
     
 
 	<%
